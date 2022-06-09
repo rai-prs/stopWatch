@@ -11,10 +11,14 @@ h3 {
   text-align: center;
 }
 
-#startStop {
+#start {
   height: 30px;
   width:100px;
-  
+}
+
+#stop {
+  height:30px;
+  width:100px;
 }
 
 #reset {

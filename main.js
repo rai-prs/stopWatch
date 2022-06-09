@@ -1,5 +1,6 @@
 let display = document.getElementById("display");
-let startStop = document.getElementById("startStop");
+let stop = document.getElementById("stop");
+let start = document.getElementById("start");
 let reset = document.getElementById("reset");
 
 let hours = 0;
@@ -11,7 +12,6 @@ let newHours = 0;
 let newMinutes = 0;
 let newSeconds = 0;
 
-let status = "stop"
 let interval;
 
 function stopWatch(){
@@ -46,22 +46,30 @@ function stopWatch(){
   display.innerHTML = newHours + ":" + newMinutes + ":" + newSeconds + ":" + milli
 }
 
-startStop.addEventListener("mousedown",function(){
-  if(status == "stop"){
+start.addEventListener("mousedown",function(){
     interval = setInterval(stopWatch,100);
-    startStop.innerHTML = "STOP";
-    status = "start";
-  }else{
-    clearInterval(interval);
-    startStop.innerHTML = "START";
-    status = "stop";
-  }
+    start.disabled = true;
+    stop.disabled = false;
+    reset.disabled = false;
 });
+
+stop.addEventListener("mousedown",function() {
+    clearInterval(interval);
+    stop.disabled = true;
+    start.disabled = false;
+    reset.disabled =false;
+})
+
+
+
+
+
 
 reset.addEventListener("mousedown",function(){
   clearInterval(interval);
-  startStop.innerHTML = "START";
-  status = "stop";
+  reset.disabled = true;
+  start.disabled = false;
+  stop.disabled = true;
   display.innerHTML = "00:00:00:0";
   hours = 0;
   minutes = 0;
