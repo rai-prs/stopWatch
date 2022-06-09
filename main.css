@@ -1,0 +1,23 @@
+h3 {
+  text-align: center;
+}
+
+#display {
+  font-size: 70px;
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+#startStop {
+  height: 30px;
+  width:100px;
+  
+}
+
+#reset {
+  width: 100px;
+  height:30px;
+}
